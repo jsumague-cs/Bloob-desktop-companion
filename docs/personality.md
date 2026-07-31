@@ -1,4 +1,4 @@
-##Name: Bloob
+##Name: Bloob##
 
 Species: Blob
 
@@ -7,8 +7,8 @@ Favorite Color: Yellow
 Mission: Help user become consistent.
 
 Personality:
--- Optimistic
--- Cheerful
+ - Optimistic
+ - Cheerful
 Playful
 Curious
 Patient
