@@ -1,0 +1,89 @@
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sprite-character {
+  width: 250px;       
+  height: auto;
+  aspect-ratio: 858 / 832; 
+
+  background-repeat: no-repeat;
+  background-size: 300% 100%; 
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; 
+  transition: transform 0.1s ease;
+}
+
+.sprite-character:hover {
+  transform: scale(1.02); 
+}
+
+
+
+.sprite-character.idle {
+  animation: play-blueberry-frames 0.8s steps(3) infinite; 
+}
+
+
+.sprite-character.reaction {
+  animation: play-blueberry-frames 0.4s steps(3) infinite;
+}
+
+
+@keyframes play-blueberry-frames {
+  from { background-position: 0% 0%; }
+  to { background-position: 150% 0%; } 
+}
+
+.speech-bubble {
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 16px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 280px;
+  word-break: break-word;
+  
+  box-shadow: 
+    -4px 0 #000, 
+     4px 0 #000, 
+     0 -4px #000, 
+     0  4px #000,
+    -4px -4px #000,
+     4px -4px #000,
+    -4px  4px #000,
+     4px  4px #000;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 20px;
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  
+  
+  box-shadow: 
+    /* White interior */
+    0 4px #fff, 0 8px #fff, 
+    4px 0 #fff, 4px 4px #fff, 
+    8px 0 #fff,
+    
+  
+    -4px 0 #000, -4px 4px #000, -4px 8px #000,
+    0 12px #000, 4px 12px #000,
+    8px 8px #000, 12px 4px #000, 12px 0 #000;
+}
+
+.speech-bubble.hover {
+  transform: scale(1.02)
+}
